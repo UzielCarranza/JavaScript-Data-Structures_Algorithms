@@ -1,1 +1,1 @@
-# JavaScript-Data-Structures_Algorithms
+#A repository to practice problem solving,  data structures, and algorithms
