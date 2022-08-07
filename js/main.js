@@ -4,3 +4,36 @@ console.log("answer[i] == \"FizzBuzz\" if i is divisible by 3 and 5.\n" +
     "answer[i] == \"Fizz\" if i is divisible by 3.\n" +
     "answer[i] == \"Buzz\" if i is divisible by 5.\n" +
     "answer[i] == i (as a string) if none of the above conditions are true");
+
+
+const fizzBuzz = (n) => {
+    // initialize array to hold values
+    const answer = []
+
+    //iterate over the number
+    for (let i = 1; i <= n; i++) {
+        //if i is divisible by 3 and 5
+        if (i % 3 === 0 && i % 5 === 0) {
+            //add FizzBuzz to the array
+            answer.push("FizzBuzz " + i)
+        }
+        //    else if its divisible by 3
+        else if (i % 3 === 0) {
+            //add Fizz to array
+            answer.push("Fizz " + i)
+        }
+        //    else if is divisible by 5
+        else if (i % 5 === 0) {
+            //push Buzz to the array
+            answer.push("Buzz " + i)
+        } else {
+            //else change the number to its string value
+            answer.push(i.toString())
+        }
+    }
+
+    //return final array
+    return answer
+}
+
+console.log(fizzBuzz(15))
