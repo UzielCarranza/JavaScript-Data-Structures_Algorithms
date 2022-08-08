@@ -37,3 +37,31 @@ const fizzBuzz = (n) => {
 }
 
 console.log(fizzBuzz(15))
+
+
+class movie {
+
+    constructor(title, director, genre, releaseYear, rating) {
+        this.title = title;
+        this.director = director;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+        this.rating = rating;
+    }
+
+    movie() {
+    }
+}
+
+
+class DisplayMovieInformation extends movie {
+
+//
+    displayInformation() {
+        console.log(`${this.title}, a ${this.genre} film directed by ${this.director} was released in ${this.releaseYear}.
+         It received a rating of ${this.rating}`)
+    }
+}
+
+const newMovie = new DisplayMovieInformation("IronMan", "John Doe","Action", "2011", "9");
+newMovie.displayInformation();
