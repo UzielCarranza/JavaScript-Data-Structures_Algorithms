@@ -63,5 +63,18 @@ class DisplayMovieInformation extends movie {
     }
 }
 
-const newMovie = new DisplayMovieInformation("IronMan", "John Doe","Action", "2011", "9");
+const newMovie = new DisplayMovieInformation("IronMan", "John Doe", "Action", "2011", "9");
 newMovie.displayInformation();
+
+console.log("REVERSE ARRAY")
+
+function reverseString(input) {
+    // Step 1. Use the split() method to return a new array
+    // Step 2. Use the reverse() method to reverse the new created array
+    // Step 3. Use the join() method to join all elements of the array into a string
+    //Step 4. Return the reversed string
+    return input.split("").reverse().join("");
+}
+
+console.log(reverseString("words new "))
+
