@@ -78,3 +78,15 @@ function reverseString(input) {
 
 console.log(reverseString("words new "))
 
+
+let url = `https://api.github.com/UzielCarranza`
+
+async function getFetch(url) {
+    const response = await fetch('https://api.github.com/users/UzielCarranza')
+        .then(response => response.json())
+
+    console.log(response)
+}
+
+
+getFetch(url);
