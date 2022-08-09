@@ -38,6 +38,7 @@ const fizzBuzz = (n) => {
 
 console.log(fizzBuzz(15))
 
+console.log("******************* classes in JavaScript *******************")
 
 class movie {
 
@@ -66,7 +67,12 @@ class DisplayMovieInformation extends movie {
 const newMovie = new DisplayMovieInformation("IronMan", "John Doe", "Action", "2011", "9");
 newMovie.displayInformation();
 
-console.log("REVERSE ARRAY")
+
+console.log("******************* classes in JavaScript *******************")
+
+
+console.log("******************* REVERSE ARRAY *******************")
+
 
 function reverseString(input) {
     // Step 1. Use the split() method to return a new array
@@ -90,3 +96,34 @@ async function getFetch(url) {
 
 
 getFetch(url);
+
+
+console.log("******************* REVERSE ARRAY *******************")
+
+
+console.log("******************* Two Sum *******************")
+
+//given array of integers: nums and target
+const twoSum = (array, targetNum) => {
+    let result = [];
+
+    //iterate over array of nums
+    for (let i = 0; i <= array.length; i++) {
+    //    iterate twice to get the second number
+        for (let j = i + 1; j <= array.length; j++){
+            if (array[i] + array[j] === targetNum){
+                result.push(i);
+                result.push(j)
+            }
+        }
+    }
+    console.log(result)
+}
+
+let arr = [23, 2, 3, 4];
+twoSum(arr, 6);
+
+//return indices of the two numbers that add up to the target value
+
+
+console.log("******************* Two Sum *******************")
