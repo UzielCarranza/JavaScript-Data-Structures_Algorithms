@@ -109,9 +109,9 @@ const twoSum = (array, targetNum) => {
 
     //iterate over array of nums
     for (let i = 0; i <= array.length; i++) {
-    //    iterate twice to get the second number
-        for (let j = i + 1; j <= array.length; j++){
-            if (array[i] + array[j] === targetNum){
+        //    iterate twice to get the second number
+        for (let j = i + 1; j <= array.length; j++) {
+            if (array[i] + array[j] === targetNum) {
                 result.push(i);
                 result.push(j)
             }
@@ -127,3 +127,31 @@ twoSum(arr, 6);
 
 
 console.log("******************* Two Sum *******************")
+
+
+console.log("******************* contains duplicate *******************")
+
+//given array of numbers
+
+const containsDuplicates = (arrayOfNums) => {
+//    iterate over array
+    for (let i = 0; i <= arrayOfNums.length; i++) {
+        for (let j = i + 1; j <= arrayOfNums.length; j++) {
+            if (arrayOfNums[i] === arrayOfNums[j]) {
+                return true
+            }
+        }
+    }
+    return false
+
+}
+
+console.log(containsDuplicates([1, 2, 3, 1]));
+//return true if a value appears twice
+
+//otherwise
+
+//return false
+
+
+console.log("******************* contains duplicate *******************")
