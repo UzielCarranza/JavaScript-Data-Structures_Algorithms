@@ -173,19 +173,22 @@ const maxProfit = (prices) => {
 
     //we start our while loop and we will run it till our Right pointer is less then the length of array
     while (right < prices.length) {
+
+        //access the array by position of variable
         if (prices[left] < prices[right]) {
 
             // our current profit
-            let profit = prices[right] - prices[left];
-
-            max_profit = Math.max(max_profit, profit);
+            max_profit = prices[right] - prices[left];
         } else {
+            // give left the position within the array of the right pointer
             left = right;
         }
+        //add one to current position
         right++;
     }
+    //return max profits
     return max_profit;
 };
 
-console.log(maxProfit([7,6,4,3,10]))
+console.log(maxProfit([7,6,4,3,1]))
 console.log("******************* ENDS  Best Time to Buy and Sell Stock *******************")
