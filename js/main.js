@@ -159,35 +159,71 @@
 //
 
 
-console.log("*******************  Best Time to Buy and Sell Stock *******************")
+// console.log("*******************  Best Time to Buy and Sell Stock *******************")
+//
+//
+// // let use initialize Left and Right pointer to first and second position of array
+// const maxProfit = (prices) => {
+//     //buy stock
+//     let left = 0;
+//     //sell stock
+//     let right = 1;
+//     //max profits
+//     let max_profit = 0;
+//
+//     //we start our while loop and we will run it till our Right pointer is less then the length of array
+//     while (right < prices.length) {
+//
+//         //access the array by position of variable
+//         if (prices[left] < prices[right]) {
+//             let profit = prices[right] - prices[left];
+//             max_profit = Math.max(max_profit, profit);
+//         } else {
+//             // give left the position within the array of the right pointer
+//             left = right;
+//         }
+//         //add one to current position
+//         right++;
+//     }
+//     //return max profits
+//     return max_profit;
+// };
+//
+// console.log(maxProfit([7,1,5,3,6,4]))
+// console.log("******************* ENDS  Best Time to Buy and Sell Stock *******************")
 
 
-// let use initialize Left and Right pointer to first and second position of array
-const maxProfit = (prices) => {
-    //buy stock
-    let left = 0;
-    //sell stock
-    let right = 1;
-    //max profits
-    let max_profit = 0;
+console.log("******************* Product of Array Except Self *******************")
+console.log("Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].\n" +
+    "\n" +
+    "The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.\n" +
+    "\n" +
+    "You must write an algorithm that runs in O(n) time and without using the division operation.")
 
-    //we start our while loop and we will run it till our Right pointer is less then the length of array
-    while (right < prices.length) {
+const productOfArray = (nums) => {
+    //declare first array
+    let leftArr = [];
+    let leftMultiplication = 1;
 
-        //access the array by position of variable
-        if (prices[left] < prices[right]) {
-            let profit = prices[right] - prices[left];
-            max_profit = Math.max(max_profit, profit);
-        } else {
-            // give left the position within the array of the right pointer
-            left = right;
-        }
-        //add one to current position
-        right++;
+    //for every iteration
+    for (let i = 0; i < nums.length; i++) {
+        leftArr[i] = leftMultiplication
+        leftMultiplication = leftMultiplication *  nums[i];
     }
-    //return max profits
-    return max_profit;
-};
+    console.log(leftArr, " arr")
 
-console.log(maxProfit([7,1,5,3,6,4]))
-console.log("******************* ENDS  Best Time to Buy and Sell Stock *******************")
+    let rightArr = [];
+    let rightMultiplication = 1;
+
+    for (let i =nums.length-1 ; i >= 0; i--) {
+        rightArr[i] = rightMultiplication;
+        rightMultiplication *= nums[i];
+        rightArr[i] *= leftArr[i]; //this additional step saves us from having another iteration. We can do the multiplication at the spot.
+    }
+    return rightArr;
+}
+
+console.log(productOfArray([1,2,3,4]))
+//expected output [24,12,8,6]
+//https://leetcode.com/problems/product-of-array-except-self/discuss/694266/Javascript-Solution-(No-Division)-(With-Explanation)
+console.log("******************* ENDS Product of Array Except Self *******************")
