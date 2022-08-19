@@ -176,9 +176,8 @@ const maxProfit = (prices) => {
 
         //access the array by position of variable
         if (prices[left] < prices[right]) {
-
-            // our current profit
-            max_profit = prices[right] - prices[left];
+            let profit = prices[right] - prices[left];
+            max_profit = Math.max(max_profit, profit);
         } else {
             // give left the position within the array of the right pointer
             left = right;
@@ -190,5 +189,5 @@ const maxProfit = (prices) => {
     return max_profit;
 };
 
-console.log(maxProfit([7,6,4,3,1]))
+console.log(maxProfit([7,1,5,3,6,4]))
 console.log("******************* ENDS  Best Time to Buy and Sell Stock *******************")
